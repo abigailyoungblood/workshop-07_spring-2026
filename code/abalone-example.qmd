@@ -44,14 +44,14 @@ H~A~: **pH has an effect on abalone shell growth**
 #| label: abalone-data-cleaning
 
 # 
-abalone_clean <- abalone  
+abalone_clean <- abalone  |> 
   # 
-  clean_names()  
+  clean_names()  |> 
   # 
-  select(mean_p_h, change_in_area_mm2_d_1_25)  
+  select(mean_p_h, change_in_area_mm2_d_1_25)  |> 
   # 
   rename(mean_ph = mean_p_h, 
-         change_in_area = change_in_area_mm2_d_1_25)
+         change_in_area = change_in_area_mm2_d_1_25) 
 ```
 
 Don't forget to look at your data! Use `View(abalone_clean)` in the _Console_.
